@@ -1,4 +1,7 @@
-## Welcome to GitHub Pages
+## TP17
+
+Respositorio del Taller de Python 2017 en la UdeC
+
 
 You can use the [editor on GitHub](https://github.com/gfrubi/TP17/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
