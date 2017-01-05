@@ -6,7 +6,7 @@
 4. Scipy: librerı́a de funciones y métodos de uso cientı́fico (funciones especiales, integración, optimización, procesamiento de seales, álgebra lineal, estadı́stica, etc.) (S. Vogt-Geisse).
 5. Uso de Python para el tratamiendo de datos cientı́ficos (E. Vöhringer-Martinez).
 
-
+[Página Web del Taller](https://github.com/gfrubi/TP17)
 
 
 ```markdown
