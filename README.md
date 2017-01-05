@@ -1,5 +1,7 @@
 ## Programa
 
+![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+
 1. Introducción al lenguaje Python (G. Rubilar).
 2. [Numpy](http://www.numpy.org): trabajo con arreglos de datos (G.Rubilar).
 3. Graficando con [Matplotlib](http://www.matplotlib.org) (G. Rubilar).
