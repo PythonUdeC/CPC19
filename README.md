@@ -1,4 +1,4 @@
-![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png) 
+![Python](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/320px-Python_logo_and_wordmark.svg.png) 
 
 ![Numpy](https://upload.wikimedia.org/wikipedia/en/1/1b/NumPy_logo.png)![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/320px-Matplotlib_logo.svg.png) ![Scipy](https://upload.wikimedia.org/wikipedia/en/5/58/Scipylogo.png)
 
