@@ -1,6 +1,6 @@
 ## Programa
 
-![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png)
+![Python](https://www.python.org/static/community_logos/python-logo-master-v3-TM.png) ![Numpy](https://upload.wikimedia.org/wikipedia/en/1/1b/NumPy_logo.png)
 
 1. Introducción al lenguaje Python (G. Rubilar).
 2. [Numpy](http://www.numpy.org): trabajo con arreglos de datos (G.Rubilar).
