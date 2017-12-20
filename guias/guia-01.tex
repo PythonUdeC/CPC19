@@ -1,0 +1,97 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{minted} 
+
+\pagestyle{headandfoot}
+
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2017}
+\rhead{\bf\normalsize Gu\'ia 01}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item Abra una consola y ejecute el int'erprete de Python (es decir, ejecute el comando \texttt{python}) o alternativamente el int'erprete IPython (ejecutando el comando \texttt{ipython}). 
+\begin{parts}
+\item ?`Qu'e versi'on de (I)Python est'a instalada?
+\item Ejecute los siguientes comandos en forma consecutiva:
+\begin{minted}{python}
+x=1
+y=2
+print(x,y)
+print("El valor de x es ",x," y el valor de y es ",y)
+\end{minted}
+\item Ahora ejecute:
+\begin{minted}{python}
+sx=str(x)
+type(sx)
+\end{minted}
+?`Qu'e tipo de variable es sx? Entonces, ?`qu'e hace la funci'on \texttt{str()}?
+\item Ahora ejecute:
+\begin{minted}{python}
+mensaje="El valor de x es "+str(x)+" y el valor de y es "+str(y)
+print(mensaje)
+\end{minted}
+?`Qu'e diferencia observa en el resultado?
+\item Conozca la funci'on \texttt{len()}, para esto ejecute:
+\begin{minted}{python}
+n=len(mensaje)
+print(n)
+type(n)
+\end{minted}
+?`Qu'e valor entrega la funci'on \texttt{len()} aplicada a un string\footnote{``String"\, es el nombre usado com'unmente para una \textit{cadena} de caracteres alfanum'ericos.}?, ?`Qu'e tipo de variable suministra? (pruebe aplic'andola a otros strings).
+
+\end{parts}
+\item Existen diversas operaciones definidas entre distintos tipos de variables. Para aprender c'omo funcionan algunas de ellas defina primero las siguientes variables y verifique su tipo:
+\begin{itemize}
+\begin{minted}{python}
+a=3.14
+b=2
+c=5
+d=6+2j
+e="hola "
+f="mechones"
+g=True
+\end{minted}
+A continuaci'on calcule e imprima al valor y el tipo del resultado de las siguientes operaciones: \texttt{a+b, a+d, a+e, b+c, b+d, b+e, f+e, e+f, a*b, a*d, a*e, b*c, b*d, c*e, e*f, a**b, a**d, a**e, b**c, e**a, e**b, e**f, a/b, a/d, a/e, b/c, b/d, b/e, c/b, d/a, d/b, e/a, e/b, e/f,  a*g, b*g, not(g), g and False, g and True, g or False, g or True}. ?`Cu'ales operaciones no est'an definidas?
+\item ?`Qu'e pas'o en los casos \texttt{b/c} y \texttt{c/b}?. Busque en las referencias sugeridas la explicaci'on de este comportamiento.
+\item Tambi'en existen operaciones que transforman el tipo de variable. Por ejemplo, como continuaci'on del ejercicio anterior, calcule y verifique el tipo de las siguientes operaciones: \texttt{int(a), float(b), d.real, d.imag, a==b, a>b}.
+
+\item Cree un programa Python llamado \texttt{test01.py} e incluya como primeras l'ineas el siguiente c'odigo:
+\begin{minted}{python}
+print("Resolveremos la ecuacion a*x**2 + b*x + c = 0")
+a=float(input("Valor de a = "))
+b=float(input("Valor de b = "))
+c=float(input("Valor de c = "))
+print("La ecuacion a resolver es: "+str(a)+"x**2 + ("+str(b)+")x + ("+str(c)+") = 0")
+\end{minted}
+Este peque\~no programa Python, al ser ejecutado con el comando \texttt{python test.py}, pregunta al usuario por los valores de las variables $a$, $b$ y $c$, que son asignadas como valores decimales (float). Ahora modifique el programa para que adem'as calcule e imprima las dos soluciones de la ecuaci'on cuadr'atica, es decir, los valores 
+\begin{equation}
+x_\pm=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\end{equation}
+Para calcular la raiz cuadrada involucrada eleve el valor correspondiente la potencia $0.5$, es decir, use el hecho que $\sqrt{\alpha}=\alpha^{0.5}$.
+\end{itemize}
+
+\end{questions}
+
+\end{document} 
