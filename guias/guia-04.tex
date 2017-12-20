@@ -1,0 +1,111 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{minted} 
+
+\pagestyle{headandfoot}
+
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Gu\'ia 04}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item En esta pr'actica usted ejercitar'a y explorar'a algunas caracter'isticas del poderoso m'odulo \texttt{Numpy}. Para ello, cargue el m'odulo usando:
+\begin{minted}{python}
+from numpy import *
+\end{minted}
+\item En \texttt{Numpy} existe una funci'on llamada \texttt{arange} que es muy similar a la ya conocida funci'on \texttt{range}. La diferencia es que \texttt{range} genera una \textbf{lista} mientras que \texttt{arange} genera un \textbf{arreglo de \texttt{Numpy}}. Para comprobar esto, ejecute:
+\begin{minted}{python}
+x=range(10)
+y=arange(10)
+print(x,type(x))
+print(y,type(y))
+\end{minted}
+En otras palabras, \texttt{arange(10)} es equivalente a \texttt{array(range(10))}.
+
+\item Usando arreglos de \texttt{Numpy} es posible realizar muchos c'alculos en forma r'apida y eficiente, sin necesidad de recurrir a ciclos (\texttt{for} o \texttt{while}). Por ejemplo, puede calcular la misma suma calculada en el punto 2 de la gu'ia 03 usando
+\begin{minted}{python}
+x=arange(101)
+suma=sum(1./2.**x)
+print(suma)
+\end{minted}
+Verifique lo anterior y aseg'urese de entender qu'e se est'a calculando.
+
+\item Adapte la idea del c'alculo en el punto anterior para implementar un c'alculo alternativo para el factorial de un n'umero $n$ (entero positivo), pero esta vez usando un arreglo de \texttt{Numpy} y la funci'on \texttt{prod()} que calcula el producto de cada componente de un arreglo de \texttt{Numpy} (similarmente a como \texttt{sum()} calcula la suma).
+
+\item Verifique que, a diferencia de su pariente \texttt{range()}, la funci'on \texttt{arange()} tambi'en funciona con pasos decimales, por ejemplo
+\begin{minted}{python}
+print(arange(1,10,0.3))
+\end{minted}
+
+\item Otra funci'on muy 'util para crear arreglos de valores en un intervalo es \texttt{linspace()}, que tiene el formato \texttt{linspace(desde,hasta,numerodeelementos)}. Por ejemplo, ejecute los siguientes comandos:
+\begin{minted}{python}
+x=linspace(1,10,20)
+y=linspace(-pi,pi,100)
+print(x,size(x))
+print(y,size(y))
+\end{minted}
+
+\item Otra propiedad importante de los arreglos es que sus elementos pueden usarse para iterar en un ciclo \texttt{for}. Para ver esto, ejecute:
+\begin{minted}{python}
+x=arange(11)
+y=x**2
+for i in x:
+	print ("la componente "+str(i)+" de y es igual a "+str(y[i]))
+\end{minted}
+
+\item Considere el archivo de datos \href{https://drive.google.com/file/d/0B4RSIcYW5V0HSGM1dzlxRGFRYkE/view?usp=sharing}{datos.txt}. \texttt{Numpy} contiene la funci'on \texttt{genfromtxt}, que lee datos desde un archivo y los asigna a un arreglo, de la dimensi'on apropiada. Ejecute (en la misma carpeta donde est'a el archivo \texttt{datos.txt}) los siguientes comandos:
+\begin{minted}{python}
+d=genfromtxt("datos.txt")
+x=d[:,0]
+y=d[:,1]
+\end{minted}
+La primera l'inea carga los datos al arreglo \texttt{d}. Las 'ultimas dos l'ineas asignan la primera columna de datos al arreglo \texttt{x} y la segunda columna a \texttt{y}. Usando las funciones \texttt{shape} y \texttt{size} de \texttt{Numpy}, verifique la forma y tama\~no de los arreglos \texttt{d, x} e \texttt{y}. Aseg'urese de entender que es lo que realiza exactamente cada comando anterior.
+
+\item Usando lo anterior, calcule e imprima:
+\begin{parts}
+\item El promedio de los valores de la primera columna. (puede usar la funci'on \texttt{sum} y \texttt{len} para calcular el promedio, o bien la funci'on \texttt{mean} de \texttt{Numpy}).
+\item El promedio de los cuadrados de los valores de la segunda columna.
+\item La suma de los productos de cada elemento de la primera con la segunda columna (es decir, $0.1*0.738 + 0.25 *	0.826 + 0.41 * 0.981 +\cdots$).
+\end{parts}
+
+\item \textbf{Bonus Track (opcional):} Los arreglos de \texttt{Numpy} tambi'en pueden contener componentes con valores booleanos (siempre que todos los componentes lo sean). Por ejemplo,
+\begin{minted}{python}
+x=arange(11)
+y=(x>5)
+print(x)
+print(y)
+\end{minted}
+muestra que \texttt{y} es un arreglo cuyas componentes son verdaderas o falsas dependiendo si la condici'on impuesta (\texttt{x>5}) se satisface en cada componente del arreglo \texttt{x}.
+\item \textbf{Bonus Track (opcional):} Las funciones \texttt{any()} y \texttt{all()}, al ser aplicadas a un \textit{arreglo de booleanos} indican si \textit{alguna} o \textit{todas} las componentes del arreglo son verdaderas, respectivamente. Usando el arreglo \texttt{x} definido en el punto anterior, entonces
+\begin{minted}{python}
+any(x>5)
+\end{minted}
+es verdadero porque s'i existe una componente del arreglo \texttt{x} que es mayor que 5, en cambio 
+\begin{minted}{python}
+any(x>10)
+\end{minted}
+es falso. Verifique en forma similar el comportamiento de \texttt{all()} (por ejemplo, viendo qu'e entregan los comandos \texttt{all(x>5)} y \texttt{all(x>=0)}).
+\end{questions}
+\end{document} 

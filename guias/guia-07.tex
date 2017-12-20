@@ -1,0 +1,92 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%added because of problem between framed and exam package
+\newcommand*{\renameenviron}[1]{%
+  \expandafter\let\csname exam-#1\expandafter\endcsname
+      \csname #1\endcsname
+  \expandafter\let\csname endexam-#1\expandafter\endcsname
+      \csname end#1\endcsname
+  \expandafter\let\csname #1\endcsname\relax
+  \expandafter\let\csname end#1\endcsname\relax
+}
+\renameenviron{framed}
+\renameenviron{shaded}
+\renameenviron{leftbar}
+\usepackage{framed}
+
+\usepackage{minted} 
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Gu\'ia 07}
+\cfoot{ }
+\lfoot{\tiny EVM}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta pr'actica usted ejercitar'a el procesamiento de archivos usando las funciones propias de python, las m'as avanzadas de \texttt{numpy}, y \texttt{pandas} para tratar bases de datos. Los archivos que requiere para la gu'ia lo encontrar'a en el directorio \texttt{Data$/$Guia} de la unidad.
+\begin{questions}
+
+
+
+\item Use las funciones de python (sin utilizar numpy) para leer el archivo "visitantes\_cine\_2016.dat". Defina correctamente la ruta al archivo con la variable \texttt{str\_file} y use las tres funciones descritas abajo.
+
+\begin{minted}{python}
+# -*- coding: UTF-8 -*-
+
+str_file = '[Reemplazar con ruta al archivo visitantes_cine_2016.dat]'
+
+
+f_in = open(str_file,'r')
+
+%ejemplo de read
+data = f.read
+
+%ejemplo de readline
+data = f.readline
+
+%ejemplo de realines
+data = f.readlines
+\end{minted}
+No olvide abrir y cerrar el archivo despu'es de procesarlo con las funciones \texttt{open} y \texttt{close}. Compare los distintos tipos y contenidos de la variable \texttt{data} como resultado de cada funci'on.
+
+\item Lea el primer rengl'on del mismo archivo y asigne el contenido a dos variables, una con nombre \texttt{mes} que contenga el mes y la otra \texttt{vis} con el n'umero de visitantes.
+
+\item Procese todo el archivo con un bucle (loop) y guarde el contenido en dos listas con el mismo nombre de las variables del ejercicio anterior.
+
+\item Grafique con matplotlib el n'umero de visitantes en funci'on del mes. Calcule el n'umero de visitantes anuales y el promedio de visitantes mensuales.
+
+\item Escriba en un nuevo archivo el n'umero de visitantes anuales y el promedio de visitantes mensuales en dos lineas diferentes.
+
+\item Use la funci'on \texttt{genfromtxt} o \texttt{loadtxt} del m'odulo \texttt{numpy} para procesar el archivo \texttt{msd.xvg} que se encuentra en el directorio \texttt{Data$/$Guia}. Este archivo contiene la desviaci'on quadr'atica media de un part'icula (CO$_{2}$ en agua) en $nm^2$ en funci'on del tiempo de simulaci'on en $ps$. Grafique estas dos variables y realice una regresi'on lineal para calcular el coeficiente de difusi'on que equivale a un sexto de la pendiente de la regresi'on. (El valor obtenido por otro programa lo encuentra como un comentario al inicio del archivo msd.xvg)
+	
+\newpage	
+
+Finalmente, vamos a trabajar con una base de datos del banco central. Bajo el siguiente link \url{http://si3.bcentral.cl/Siete/secure/cuadros/arboles.aspx} podr'a encontrar el valor del dolar observado en el a\~{n}o 2016.
+\item Gaurde los valores del dolar con formato excel
+\item Abra el archivo descargado con Microsoft excel y gaurde el archivo en formato csv (en caso de no tener Microsoft excel puede usar el archivo que se encuentra bajo el directorio \texttt{Data$/$Guia}.) 
+\item Procese el archivo con la funci'on \texttt{genfromtxt} para obenter el valor promedio del dolar observado en el a\~{n}o 2016. (Para eliminar los valores ausentes de los d'ias feriados puede utilizar la funci'on \texttt{isnan()} de numpy.)
+
+\item \textbf{Bonus Track (opcional)}: Busque en internet bajo el link \url{http://www.datos.gob.cl} una base de datos con las precipitaciones en Chile del primer semestre del a\~{n}o 2015. Descargue el archivo con formato \texttt{.csv}. Procese el archivo con el m'odulo pandas y analice los datos para responder a la siguientes preguntas: a. Cu'al estaci'on registro la mayor precipitaci'on diaria y en que fecha ocurrio esto? b. Cu'al fue la precipitaci'on acumulada en la estaci'on de Pichoy, Valdivia durante el primer semestre de este a\~{n}o? (Para esta 'ultima pregunta se recomienda usar la funci'on \texttt{loc} en \texttt{pandas})
+\end{questions}
+\end{document} 
