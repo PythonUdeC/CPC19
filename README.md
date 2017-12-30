@@ -8,7 +8,7 @@
 ## Introducción a la Programación en Python
 
 Bienvenidos a la iteración 2018 del curso **Introducción a la Programación en Python**. El curso es intensivo de una semana 
-y será del **02 al 04 de Enero del 2018** en la **Sala Multimedia y Computación** de la Facultad de Ciencias Químicas. El horaria de la mañana es de **09:00 a 12:30** y el de la tarde de **14:00 a 17:30**. 
+y será del **02 al 04 de Enero del 2018** en la **Sala Multimedia y Computación** de la Facultad de Ciencias Químicas. El horario de la mañana es de **09:00 a 12:30** y el de la tarde de **14:00 a 17:30**. Habrá pausas para café y galletas. 
 
 El curso entrega las bases para poder utilizar el lenguaje de programación Python en al ámbito científico. Con los aprendizajes alcanzados el estudiante podrá analizar datos experimentales y computacionales haciendo uso de las herramientas escritas para Python y de esa forma aportar a una interpretación más completa de sus resultados de investigación. 
 
