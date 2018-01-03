@@ -1,0 +1,169 @@
+\documentclass[5pt]{exam}
+%\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8x]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{minted} 
+
+\pagestyle{headandfoot}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Gu\'ia 05}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\center{\LARGE \textbf{Guia Scipy}
+\begin{questions}
+
+\item  En esta guia usted ejercitará algunas características del modulo scipy. El modulo scipy se importa como:
+\begin{minted}{python}
+import scipy as sci
+\end{minted}
+\item Integre la función de Bessels entre 0 y su 3 raiz.
+
+\item Calcule las siguientes integrales numricamente: 
+    \begin{itemize}
+      \item $ \int_0^10 x sen(2x^3 -10)dx $
+      \item $ \int_{-2}^28 xe^{-x^2+5}dx $
+      \item $ \int_0^100 10x^3+x^7 dx  $
+    \end{itemize}
+    
+\item El trabajo de expansión un gas de van der Waals se obtiene calculando la integral:
+    \begin{equation}
+        w = -\int^i_f PdV
+    \end{equation}
+La presión se puede calcular mediante la expresión:
+\begin{equation}
+    P = \frac{nRT}{V- nb} - \frac{an^2}{V^2}
+\end{equation}
+Dado los siguientes datos:
+\begin{itemize}
+    \item $R = 8.314JK^{-1} mol^{-1}$
+    \item $n = 1 mol$
+    \item $a = 0.657Jm^{3} mol^{−2} , b = 5.62 × 10 −5 m^3 mol^{−1}$
+    \item $T = 298K$
+\end{itemize}
+
+\item Dada las siguientes matrices:
+\[
+\begin{bmatrix}
+      10  & 8  & 0 &  1  \\
+      1   &  3 & 8 &  9 \\
+      5   &  9 & 0 &  1 \\
+      6   &  7 & 13 & 9 \\
+\end{bmatrix}
+B =
+\begin{bmatrix}
+      9  & 8  & 7 &  4  \\
+      3   &  6 & 8 &  7 \\
+      5   &  2 & 2 &  1 \\
+      6   &  12 & 0 & 9 \\
+\end{bmatrix}
+\]
+Calcule las siguientes operaciones:
+\begin{itemize}
+    \item Inversa de A
+    \item   e$^A$
+    \item det(B)
+    \item Los valores y vectores propios de A
+    \item Escriba un programa que calcula la traza de una matriz.
+\end{itemize}
+
+\item La operación de multiplicación de una matriz \textbf{A} de dimensiones $ixj$ por una  matriz \textbf{B} de 
+dimnsiones $jxk$, donde $j=1\dotsm $  está dada por :
+\begin{equation}
+    \label{} AB = \sum_{j=1}^5 A_{ij}B_{ji}
+\end{equation}
+Implemente una rutina que hace un calculo de multiplicación de matrices y verifíque su resultado con la función
+dot de numpy.
+
+\item Una molcula de agua tiene las siguientes coordenadas cartesianas en \AA ngstrom: 
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{c|ccc}
+            O & 0.0000 & 0.0000 & 0.0000 \\
+            H & 0.7586 & 0.0000 & 0.5043 \\
+            H & 0.7586 & 0.0000 & -0.5043
+        \end{tabular}
+    \end{table}
+    \begin{enumerate}
+        \item Guarde las coordenadas x,y,z y el simbolo atómico en un array de numpy.
+        \item Escriba un diccionario que tiene como llaves símbolos atómicos y como valor la masa
+              atómica. (O: 15.999 g/mol, H: 1.000 g/mol)
+        \item El momento de inercia de una mol\item cula esta dado por:
+            \begin{equation}
+                I_{xx} = \sum_i^N m_i(y_i^2 + z_i^2) \quad I_{yy} = \sum_i^N m_i(x_i^2 + z_i^2) \quad I_{zz} = \sum_i^N m_i(x_i^2 + y_i^2)
+            \end{equation}
+        En el caso de los elementos diagonales, y para los fuera de la diagonal:
+            \begin{equation}
+                I_{xy} = \sum_i^N m_ix_iy_i) \quad I_{xz} = \sum_i^N m_ix_iz_i \quad I_{yz}=\sum_i^N m_iy_iz_i
+            \end{equation}
+        Donde N es el número de átomos. Calcule el tensor de inercia y encuentre los valor de los
+        momentos de inercia principales, los que corresponden a los valores propios del tensor de
+        inercia
+    \end{enumerate}
+
+
+\item Resuelva numricamente la siguiente ecuación diferencial:
+    \begin{equation}
+        \frac{dy}{dx} = x -y \quad y(0) = 1 
+    \end{equation}
+
+La solución analítica de la ecuación diferencial es:
+\begin{equation}
+    y(x) = x -1 +2e^{-x}
+\end{equation}[
+Grafique tanto la solución num\'erica como la solución analítica entre 0 y 5 y compare ambos
+resultados.
+
+\item Considere la siguiente ecuación diferencial de segundo orden para y(x).
+
+\begin{equation}
+    y^{''} + 2 y' + 2y = cos(x) \qquad y(0) =0 \quad y'(0) = 0
+\end{equation}
+
+Esta ecuación se puede transformar en un sistema de dos ecuaciones de primer orden definiendo
+una nueva variable dependiente. Por ejemplo:
+
+\begin{align}
+    z' + 2z + 2y &= cos(2x) \\
+    z &= y'
+\end{align}
+Con las condiciones iniciales z(0) = y(0) = 0. Resuelva la ecuación diferencial entre 0 y 10 y
+grafique el resultado.
+
+
+\item  De las siguientes funciones, encuentre los máximos, mínimos y raíces. Grafique cada una para verificar visualmente su resultado.
+    \begin{itemize}
+        \item $f(x) = 2x^4 + x^3 + −3x^2$
+        \item $f(x) = −x^6 − 3x^3 + x + 1$
+        \item $f(x) = 4x^5 − 8x^4 − 5x^3 + 10x^2 + x − 2$
+    \end{itemize}
+
+\item En el archivo peliculas.txt se encuentran los datos de el largo de las películas en minutos, con 
+rating IMDB mayor a 7.0 hechas en el año 2015.
+    \begin{parts}
+        \part Calcule el promedio del largo de las películas.
+        \part Grafique un histograma para las película, y dibuje una curva de distribución normal en el
+        mismo gráfico.
+        \part Calcule la desviación estándar y la varianza de la distribución.
+    \end{parts}
+
+\end{questions}
+\end{document} 
