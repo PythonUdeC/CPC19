@@ -1,0 +1,90 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{headandfoot}
+
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Tarea \'area F\'isica}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{Fecha M'axima de entrega: Viernes 12 de Enero}
+\end{center}
+\textbf{Instrucciones:} Resuelva c/u de los problemas propuestos usando Python. Env'ie todos los archivos necesarios para reproducir sus resultados (archivos de datos, c'odigos .py, notebooks .ipynb, etc.) por email a \texttt{grubilar@udec.cl}.
+
+\begin{questions}
+
+\item Una predicci'on de la teor'ia electromagn'etica cl'asica es que una carga el'ectrica $q$ que realiza un movimiento arm'onico simple de la forma
+\begin{equation}
+\vec{x}(t) = a\cos(\omega_0t)\hat{z},
+\end{equation}
+emite ondas electromagn'eticas en todas direcciones, en frecuencias $\omega_m$ m'ultiplos  de la frecuencia de oscilaci'on $\omega_0$. En particular, el c'alculo predice que la potencia promedio radiada en la $m-$'esima frecuencia, $\omega_m = m\omega_0$, por unidad de 'angulo s'olido, es dada por la expresi'on
+\begin{equation}
+\left\langle \frac{dP_{m}}{d\Omega}\right\rangle
+=\frac{q^2\mu_0 c}{4\pi}\frac{\omega_0^2m^2}{2\pi}\tan^2\theta\left[ J_{m}\left(\frac{a\omega_0 m}{c}\cos\theta\right)  \right]^2.
+\end{equation}
+donde $\theta$ es el 'angulo entre la direcci'on de emisi'on y la direcci'on de oscilaci'on de la carga (eje $z$) y $J_m(x)$ es la funci'on de Bessel de primera especie y orden $m$.
+\begin{parts}
+\item Confeccione un gr'afico coordenadas polares (ver notebook de introducci'on a Matplotlib) que grafique la potencia promedio en funci'on del 'angulo $\theta$, para distintos valores de $m$. El resultado debiese ser algo parecido a lo mostrado en la figura \ref{TER2}
+\begin{figure}[ht]
+\centerline{\includegraphics[width=10cm]{fig-mas.pdf}}
+\caption{L'obulo de radiaci'on para $m=1,\dots,5$ para $\beta=a\omega_0/c=0.5$.}
+\label{TER2}
+\end{figure}
+\item Evalue (num'ericamente), para $\beta =0.1$ y $\beta = 0.5$ y $m = 1,2,..,5$,  la potencia promedio total radiada, obtenida integrando la expresi'on anterior en todas las direcciones, es decir,
+\begin{equation}
+\left\langle P_{m}\right\rangle  = \oint\left\langle \frac{dP_{m}}{d\Omega}\right\rangle d\Omega, \quad d\Omega = \sin\theta\,d\theta\,d\varphi.
+\end{equation}
+Imprima los valores obtenidos y graf'iquelos, para obtener un resultado similar al mostrado en la figura \ref{TER3}.
+\begin{figure}[ht]
+\centerline{\includegraphics[width=10cm]{fig-mas-potencia-total-comparacion.pdf}}
+ \caption{Potencia promedio radiada para $m=1,\cdots,5$, con par'ametros de velocidad $\beta=0.5$ y  $\beta=0.1$, normalizadas respecto a la potencia total.}
+\label{TER3}
+\end{figure}
+\end{parts}
+
+\item Desde el sitio del \textit{Supernova Cosmology Project} (SCp,
+\url{http://supernova.lbl.gov/}), descargue el archivo de datos  \url{http://supernova.lbl.gov/Union/figures/SCPUnion2.1_mu_vs_z.txt}.
+Este archivo compila la informaci'on del \textbf{redshift} ($z$, segunda columna) y el \textbf{m'odulo de distancia}, que es una medida de distancia usada en Astronom'ia, (tercera columna), junto con su respectivo error (cuarta columna) medidos para cientos
+de supernovas\footnote{La primera columna es el nombre o denominaci'on de
+la supernova, las otras columnas no son relevantes en este problema.}.
+La relaci'on entre el m'odulo de distancia ($\mu$, tambi'en denotado como $m-M$) y el redshift ($z$) de estas
+supernovas muy distantes determina el modo en que el Universo evoluciona a escalas cosmol'ogicas. En particular, el hecho que el m'odulo de distancia aumente con el redshift indica que el Universo est'a en expansi'on. 
+
+\begin{parts}
+\item Grafique $\mu$ versus $z$ en escala lineal, incluyendo el error en las medidas de $\mu$, y exporte el resultado a un archivo .pdf. El resultado debiese ser similar a \href{https://github.com/gfrubi/RG/blob/master/fig/m-M-versus-z-con-error.pdf}{\'este}, s'olo que su gr'afico ser'a a'un m'as hermoso, ya que incluir'a t'itulo, una grilla, as'i como marcadores y colores distintos.
+
+\item Modifique su c'odigo anterior para que adem'as exporte el gr'afico de los mismos datos, pero en escala logar'itmica para el redshift $z$ (es decir, el eje horizontal). Este gr'afico debiese ser una versi'on mejorada del disponible \href{https://github.com/gfrubi/RG/blob/master/fig/m-M_vs_z_semilog.pdf}{aqu\'i}.
+
+\item De acuerdo al ``modelo cosmol'ogico est'andar''\footnote{que asume bastantes hip'otesis que simplifican el modelo.}, si la expansi'on se produce a una \textit{tasa constante} entonces la relaci'on entre el redshift $z$ y el m'odulo de distancia $\mu = m-M$ deber'ia ser de la forma
+\begin{equation}\label{ec}
+\mu=a\cdot \log(z)+b,
+\end{equation}
+donde $a$ y $b$ son constantes. A partir de esta informaci'on, realize un ajuste del modelo dado por la expresi'on \eqref{ec} y encuentre los valores de $a$ y $b$ que mejor se ajustan a los datos.
+\end{parts}
+
+
+\end{questions}
+
+\end{document} 
