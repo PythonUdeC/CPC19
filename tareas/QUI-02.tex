@@ -1,0 +1,71 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%added because of problem between framed and exam package
+\newcommand*{\renameenviron}[1]{%
+  \expandafter\let\csname exam-#1\expandafter\endcsname
+      \csname #1\endcsname
+  \expandafter\let\csname endexam-#1\expandafter\endcsname
+      \csname end#1\endcsname
+  \expandafter\let\csname #1\endcsname\relax
+  \expandafter\let\csname end#1\endcsname\relax
+}
+\renameenviron{framed}
+\renameenviron{shaded}
+\renameenviron{leftbar}
+\usepackage{framed}
+\usepackage{hyperref}
+
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Tarea \'area Química/Bioquímica}
+\cfoot{ }
+\lfoot{\tiny EVM}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{Fecha M'axima de entrega: Viernes 12 de Enero}
+\end{center}
+\textbf{Instrucciones:} Resuelva el problema propuesto usando Python. Env'ie todos los archivos necesarios para reproducir sus resultados (archivos de datos, c'odigos .py, notebooks .ipynb, etc.) por email a \texttt{evohringer@udec.cl}.
+
+\bigskip
+
+En esta tarea usted deberá calcular el centro de masa de la molécula de caffeina. 
+
+
+Las coordenadas de  los átomos que forman esta molécula la podrá bajar en \url{https://pubchem.ncbi.nlm.nih.gov/compound/caffeine#section=3D-Conformer} apretando el botón \textit{Download} y seleccionando uno de los formatos ofrecidos (recomiendo el formato \textit{sdf}). 
+
+
+\begin{parts}
+\part Obtenga del formato que mas le acomode las coordenadas y el tipo de átomo (elemento) que componen la molécula.
+
+\part Utilizando numpy calcule los componentes $x$, $y$ y $z$ del centro de masa de la molécula ($cms_{x,y,z}$) mediante la siguiente fórmula:
+\begin{eqnarray}
+cms_{x} = \frac{1}{M}\sum_{i=1}^{N} m_{i} * x_{i}\\
+cms_{y} = \frac{1}{M}\sum_{i=1}^{N} m_{i} * y_{i}\\
+cms_{z} = \frac{1}{M}\sum_{i=1}^{N} m_{i} * z_{i},
+\end{eqnarray}
+en donde $m_{i}$ es la masa en g del elemento que representa el átomo, $x_{i}$ la coordenada $x$ del átomo $i$,  $M$ la masa total de la molécula en g, y $N$ es el número total de átomos en la molécula.
+\end{parts}
+
+\end{document} 
