@@ -1,0 +1,59 @@
+\documentclass[11pt]{exam}
+%\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8x]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{headandfoot}
+
+%\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2018}
+\rhead{\bf\normalsize Tarea \'area Ingeniería}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{Fecha Máxima de entrega: Viernes 12 de Enero}
+\end{center}
+\textbf{Instrucciones:} \noindent Resuelva el problema propuesto usando Python. Envíe todos los archivos necesarios para reproducir sus resultados (archivos de datos, códigos .py, notebooks .ipynb, etc.) por email a \texttt{svogt@udec.cl}.
+
+\bigskip
+
+\noindent El estudio de irradiación solar por zona geográfica es importante al momento de decidir si una región es adecuada 
+para la instalación de celdas fotovoltáicas. En la carpeta de la tarea Ing-01 encontraran un archivo, \textit{sun.csv} que contiene la información de 
+irradiación solar sobre una grilla global de latitudes y longitdes. Esta información esta dada tanto por meses como anual. La base de datos 
+entregada en la carpeta fue obtenida en \url{https://maps.nrel.gov/nsrdb-viewer} y procesada utilizando el script pre$\_$proccess$\_$data.py,
+para pasar de una grilla geográfica en polígonos a puntos.\\
+\begin{parts}
+    \part \noindent Grafique un histograma de la irradiación a nivel mundial y calcule el promedio global de irradiación. Despu\'es, construya 
+    un histograma de irradiación tanto para el hemisferio norte como el hemisferio sur y presente las dos gráficas en una misma figura.
+    \part \noindent La cuidad de Punta Arenas tiene coordenadas Lat/Long de (-53.163833, -70.917068) mientras que las coordenadas de Arica son:
+    (-18.478253, -70.312599). Utilizando un Longitud aproximada de -70  para todo Chile, construya una gráfica de latitud vs irradiación.
+    A partir de la serie de puntos obtenida determine a que latitud se encuentra el máximo de irradiación.
+    \part \noindent Repita el analisis anterior para todos los meses del año e incluya las 12 gráficas en una misma figura.
+    \part \noindent Bonus track optional:  Utilice las librerías pyshp o arcpy para el procesamiento de los datos en términos de polígonos, 
+    como aparece en la data crudo (\textit{sun$\_$raw.csv}), y repito los ejercicios de la tarea. Si es que le interesan los 
+    análisis geográficos, le recomiendo familiarizarse con las librerías que fueron especialmente diseñadas para ese fin.
+\end{parts}
+
+
+
+
+\end{document} 
