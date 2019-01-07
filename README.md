@@ -2,8 +2,7 @@
 
 
 
-[![Numpy](./images/NumPy_logo.png)](https://matplotlib.org)![Matplotlib](./images/Matplotlib_logo.png)![Scipy](./images/scipy.png)
-![Sympy](./images/Sympy_logo.png)![Pandas](./images/Pandas_logo.png)
+[![Numpy](./images/NumPy_logo.png)](https://numpy.org)[![Matplotlib](./images/Matplotlib_logo.png)](https://matplotlib.org)[![Scipy](./images/scipy.png)](https://scipy.org)[![Sympy](./images/Sympy_logo.png)](https://sympy.org)[![Pandas](./images/Pandas_logo.png)](https://pandas.pydata.org)
 
 
 ## Introducción a la Programación en Python
