@@ -2,7 +2,7 @@
 
 
 
-![Numpy](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/NumPy_logo.svg/200px-NumPy_logo.svg.png)![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/320px-Matplotlib_logo.svg.png) ![Scipy](https://upload.wikimedia.org/wikipedia/en/5/58/Scipylogo.png)
+![Numpy](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/NumPy_logo.svg/200px-NumPy_logo.svg.png)![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/320px-Matplotlib_logo.svg.png)![Scipy](https://www.fullstackpython.com/img/logos/scipy.png)![Sympy](https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Sympy_logo.svg/240px-Sympy_logo.svg.png)
 
 
 ## Introducción a la Programación en Python
