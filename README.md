@@ -13,11 +13,4 @@ y se realizará entre el **07 y el 11 de Enero del 2018** en el **laboratorio LC
 
 El curso entrega las bases para poder utilizar el lenguaje de programación Python en al ámbito científico. Con los aprendizajes alcanzados el estudiante podrá analizar datos experimentales y computacionales haciendo uso de las herramientas escritas para Python y de esa forma aportar a una interpretación más completa de sus resultados de investigación. 
 
-
-## Programa
-
-1. Introducción al lenguaje Python (G. Rubilar).
-2. [Numpy](http://www.numpy.org): trabajo con arreglos de datos (G.Rubilar).
-3. Graficando con [Matplotlib](http://www.matplotlib.org) (G. Rubilar).
-4. Scipy: librerı́a de funciones y métodos de uso cientı́fico (funciones especiales, integración, optimización, procesamiento de señales, álgebra lineal, estadı́stica, etc.) (S. Vogt-Geisse).
-5. Uso de Python para el tratamiendo de datos cientı́ficos (E. Vöhringer-Martinez).
+![Programa](https://python.udec.cl/wp-content/uploads/2018/12/programa-1.png)
