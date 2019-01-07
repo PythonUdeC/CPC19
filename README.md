@@ -3,7 +3,7 @@
 
 
 ![Numpy](./images/NumPy_logo.png)![Matplotlib](./images/Matplotlib_logo.png)![Scipy](./images/scipy.png)
-![Sympy](./images/Sympy_logo.png)
+![Sympy](./images/Sympy_logo.png)![Pandas](./images/Pandas_logo.png)
 
 
 ## Introducción a la Programación en Python
