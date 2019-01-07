@@ -2,7 +2,7 @@
 
 
 
-![Numpy](https://upload.wikimedia.org/wikipedia/commons/1/1a/NumPy_logo.svg)![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/320px-Matplotlib_logo.svg.png) ![Scipy](https://upload.wikimedia.org/wikipedia/en/5/58/Scipylogo.png)
+![Numpy](https://upload.wikimedia.org/wikipedia/commons/1/1a/NumPy_logo.svg | height=100)![Matplotlib](https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/320px-Matplotlib_logo.svg.png) ![Scipy](https://upload.wikimedia.org/wikipedia/en/5/58/Scipylogo.png)
 
 
 ## Introducción a la Programación en Python
