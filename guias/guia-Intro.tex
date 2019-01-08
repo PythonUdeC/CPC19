@@ -1,5 +1,5 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[activeacute,spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,epsfig}
 \usepackage[colorlinks]{hyperref}
@@ -17,7 +17,7 @@
 \firstpageheadrule
 \runningheadrule
 \lhead{\bf\normalsize Taller Python 2019}
-\rhead{\bf\normalsize Gu\'ia 01}
+\rhead{\bf\normalsize Gu\'ia Introducci\'on}
 \cfoot{ }
 \lfoot{\tiny GR}
 \begin{flushleft}
@@ -67,6 +67,7 @@ type(n)
 ?`Qu'e valor entrega la funci'on \texttt{len()} aplicada a un string\footnote{``String"\, es el nombre usado com'unmente para una \textit{cadena} de caracteres alfanum'ericos.}?, ?`Qu'e tipo de variable suministra? (pruebe aplic'andola a otros strings).
 
 \end{parts}
+
 \item Existen diversas operaciones definidas entre distintos tipos de variables. Para aprender c'omo funcionan algunas de ellas defina primero las siguientes variables y verifique su tipo:
 \begin{itemize}
 
@@ -79,11 +80,14 @@ e = "hola "
 f = "gente"
 g = True
 \end{minted}
+
 A continuaci'on imprima el valor y el tipo del resultado de las siguientes operaciones: \texttt{a+b, a+d, a+e, b+c, b+d, b+e, f+e, e+f, a*b, a*d, a*e, b*c, b*d, c*e, e*f, a**b, a**d, a**e, b**c, e**a, e**b, e**f, a/b, a/d, a/e, b/c, b/d, b/e, c/b, d/a, d/b, e/a, e/b, e/f,  a*g, b*g, not(g), g and False, g and True, g or False, g or True}. ?`Cu'ales de estas operaciones no est'an definidas?
+
 \item ?`Qu'e pas'o en los casos \texttt{b/c} y \texttt{c/b}?. Busque en las referencias sugeridas la explicaci'on de este comportamiento.
+
 \item Tambi'en existen operaciones que transforman el tipo de variable. Por ejemplo, como continuaci'on del ejercicio anterior, calcule y verifique el tipo de las siguientes operaciones: \texttt{int(a), float(b), d.real, d.imag, a==b, a>b}.
 
-\item Cree un programa Python llamado \texttt{test01.py} e incluya como primeras l'ineas el siguiente c'odigo:
+\item Cree un programa Python llamado \texttt{cuadratica.py} e incluya como primeras l'ineas el siguiente c'odigo:
 
 \begin{minted}[bgcolor=bg]{python}
 print("Resolveremos la ecuacion a*x**2 + b*x + c = 0")
@@ -210,8 +214,6 @@ z = list(range(2,26,3))
 print(z)
 \end{minted}
 
-
-
 \item ?`Qu'e hacen los siguientes comandos?, ?`Modifican el valor de \texttt{x} y/o \texttt{lista}?
 
 \begin{minted}[bgcolor=bg]{python}
@@ -220,7 +222,35 @@ x.split("e")
 lista.append("chao")
 lista.insert(2,"cool")
 \end{minted}
+
+
+\item Una part'icula realiza un movimiento vertical bajo la influencia de la gravedad de modo que su altura $z(t)$ respecto al suelo es dado por la siguiente ecuaci'on de la trayectoria,
+\begin{equation}
+z(t)=z_0 + v_0 t -\frac{1}{2}gt^2,
+\end{equation}
+con $g=9.8 {\ \rm m/s^2}$. Considere el caso en que $z_0=1 {\ \rm m}$ y $v_0=24 {\ \rm m/s}$.
+
+Escriba un programa en Python que, usando un ciclo \texttt{for}, calcule e imprima el valor de la altura $z(t)$ para los siguientes valores de tiempo (en segundos): $t=0, 0.1, 0.2, \dots 5.0$ (51 valores distintos de tiempo).
+
+\item Modifique el programa anterior, para que ahora 'este pregunte al usuario los valores de $z_0$ y $v_0$. Para esto, use el comando \texttt{input} que aprendi'o en su trabajo con la gu'ia 07.
+
+\item Escriba un programa en Python (que use un ciclo \texttt{for}) que calcule e imprima la suma de los primeros 1000 n'umeros enteros, es decir, el valor de 
+\begin{equation}
+1 + 2 + 3 + 4  + \cdots + 999 + 1000.
+\end{equation}
+
+\item Escriba un programa que al ejecutarlo pregunte al usuario un n'umero e imprima su valor absoluto. Recuerde que el valor absoluto (o m'odulo) $|x|$ de un valor real $x$ es definido por
+\begin{equation}
+|x|:=\left\{\begin{array}{cl}
+x, &\text{si } x\ge 0 \\
+-x, & \text{si } x<0 \\
+\end{array}\right. .
+\end{equation}
+
+\item Usando lo que aprendi'o sobre el comando \texttt{if} y asociados, modifique el programa \texttt{cuadratica.py} que cre'o y que resuelve la ecuaci'on cuadr'atica $ax^2+bx+c=0$, para que ahora el programa informe que existen dos soluciones reales, y las imprima, si el discriminante $b^2-4ac$ es positivo, o que informe que no existe soluci'on real (si el discriminante es negativo), o bien que informe que existe s'olo una soluci'on real, y la imprima (si el discriminante es nulo).
+
+\item Escribir un programa que pregunte al usuario el valor alg'un n'umero natural e imprima todos los números primos que hay hasta ese número. Por ejemplo, si se ingresa el n'umero 8, el programa debe imprimir los n'umeros 2, 3, 5 y 7.
+
+\item Modifique el programa anterior para que ahora el c'alculo de todos los números primos menores que un cierto valor \texttt{n} sean retornados como una lista al llamar a la funci'on \texttt{primos(n)}.
 \end{questions}
-
-
-\end{document} 
+\end{document}
