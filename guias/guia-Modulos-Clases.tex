@@ -1,5 +1,5 @@
 \documentclass[11pt]{exam}
-\usepackage[activeacute,spanish]{babel}
+%\usepackage[activeacute,spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath,epsfig}
 \usepackage[colorlinks]{hyperref}
@@ -10,7 +10,7 @@
 \definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
 
 \pagestyle{headandfoot}
-\spanishdecimal{.}
+%\spanishdecimal{.}
 
 \begin{document}
 
@@ -28,10 +28,37 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{questions}
-\item Copie los c'odigos que escribi'o anteriormente y que definen su implementación de  las funciones \texttt{primos(n)} y \texttt{mifactorial(n)}, y adem'as c'odigo que calcula de su aproximaci'on de pi (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{misfunciones.py}. Este archivo puede usarse para definir un nuevo m'odulo. A continuaci'on, en una sesi'on interactiva de Python, importe su funci'on usando primero \texttt{import mimodulo} y llame a las funciones que est'an ah'i definidas. A continaci'on, importe el módulo de la segunda forma vista en clases, es decir, usando \texttt{from mimodulo import *} y vea c'omo funciona ahora la llamada a las funciones.
+%\item Copie los c'odigos que escribi'o anteriormente y que definen su implementación de  las funciones \texttt{primos(n)} y \texttt{mifactorial(n)}, y adem'as c'odigo que calcula de su aproximaci'on de pi (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{misfunciones.py}. Este archivo puede usarse para definir un nuevo m'odulo. A continuaci'on, en una sesi'on interactiva de Python, importe su funci'on usando primero \texttt{import mimodulo} y llame a las funciones que est'an ah'i definidas. A continaci'on, importe el módulo de la segunda forma vista en clases, es decir, usando \texttt{from mimodulo import *} y vea c'omo funciona ahora la llamada a las funciones.
+%
+%\item El factorial es una funci'on com'unmente usada, y ya est'a implementada en diversos m'odulos populares de Python, por ejemplo, en el m'odulo \texttt{math}. Para verificar esto, importe el m'odulo \texttt{math} de las tres formas discutidas en clase y verifique que la funci'on \texttt{factorial} entrega los mismos valores ya calculados por usted. Lo mismo ocurre con el valor del n'umero $\pi$ (\texttt{math.pi}). 
+%
+%\item Aproveche que tiene cargado el m'odulo \texttt{math} e investigue qu'e funciones y variables est'an definidas en este m'odulo. Para esto, ejecute \texttt{dir(math)} o revise la \href{https://docs.python.org/2/library/math.html}{documentaci\'on en l\'inea} disponible.
+%\end{questions}
 
-\item El factorial es una funci'on com'unmente usada, y ya est'a implementada en diversos m'odulos populares de Python, por ejemplo, en el m'odulo \texttt{math}. Para verificar esto, importe el m'odulo \texttt{math} de las tres formas discutidas en clase y verifique que la funci'on \texttt{factorial} entrega los mismos valores ya calculados por usted. Lo mismo ocurre con el valor del n'umero $\pi$ (\texttt{math.pi}). 
+\item Construya una clase que saludo a una persona de dos formas, 
+      uno con MAYUSCULAS y otro con MINUSCULAS. (la puede nombrar Saludos). 
+      Inicie la clase con el nombre de la persona. 
 
-\item Aproveche que tiene cargado el m'odulo \texttt{math} e investigue qu'e funciones y variables est'an definidas en este m'odulo. Para esto, ejecute \texttt{dir(math)} o revise la \href{https://docs.python.org/2/library/math.html}{documentaci\'on en l\'inea} disponible.
+\item Construya una clase para la forma de un rectangulo. Inicie la 
+      clase con la distancia $x$ e $y$ del objeto abstracto. Además incluya un método
+      que calcula el área, perimetero del rectangulo y uno que revisa si es un cuadrado.
+
+\item Construya una clase para un puente. Inicie la clase con los siguientes atributos:
+        \begin{itemize}
+            \item Largo del puente
+            \item Tipo del puente
+            \item Alturo del puente
+            \item Material
+        \end{itemize}
+     En base a eso escriba dos métodos, uno que le asigna un peso máximo al puente y otro
+     que calcula cuantos vehiculos puede soportar el puente en base al peso máximo. (Hint: Peso 
+     de un vehiculo promedio: 1500 kg) (Avanzado!)
+
+\item Importe el módulo de numpy con el nombre np y imprima todas las funciones, variables,
+      y clases que contiene. Despues importe solamente la función array y la clase ndarray desde
+      numpy.
+
+\item Haga un modulo Python con todas las clases y funciones que ha escrito hasta este momento.
+      Este tiene que ser un archivo separado, que se pueda llamar desde cualquier programa.
 \end{questions}
 \end{document}
