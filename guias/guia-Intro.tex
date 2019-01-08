@@ -252,5 +252,23 @@ x, &\text{si } x\ge 0 \\
 \item Escribir un programa que pregunte al usuario el valor alg'un n'umero natural e imprima todos los números primos que hay hasta ese número. Por ejemplo, si se ingresa el n'umero 8, el programa debe imprimir los n'umeros 2, 3, 5 y 7.
 
 \item Modifique el programa anterior para que ahora el c'alculo de todos los números primos menores que un cierto valor \texttt{n} sean retornados como una lista al llamar a la funci'on \texttt{primos(n)}.
+
+\item El factorial de un n'umero entero positivo $n$, denotado por $n!$ es definido por
+\begin{equation}
+n!=1\cdot 2\cdot 3\cdots (n-1)\cdot n.
+\end{equation}
+Por ejemplo, $3!=1\cdot 2\cdot 3=6$ y $10!=3628800$.
+Escriba un programa en Python que pregunte al usuario por el valor de $n$, y que calcule e imprima su factorial, es decir, $n!$.
+
+\item Modifique ahora el c'odigo que acaba de crear para calcular el factorial de un n'umero entero para que ahora su programa verifique, antes de calcular el factorial, que el n'umero suministrado es realmente un entero positivo, y s'olo calcule el factorial en ese caso, y que en caso contrario informe al usuario que el n'umero ingresado no es apropiado.
+
+\item Modifique el programa anterior para que ahora el c'alculo del factorial de un cierto valor \texttt{n} sea retornado al llamar a la funci'on \texttt{mifactorial(n)}.
+
+\item Escriba un programa que use su nuevo funci'on \texttt{mifactorial(n)} y eval'ue e imprima (una aproximaci'on de) el n'umero $\pi$. Para esto, use la siguiente expresi'on en serie (desarrollada por \href{https://es.wikipedia.org/wiki/Leonhard_Euler}{Leonhard Euler}),
+\begin{equation}
+\pi = \sum_{n=0}^{\infty}\frac{2^{n+1}(n!)^2}{(2n+1)!}=\left[2^1\frac{(0!)^2}{1!} + 2^2\frac{(1!)^2}{3!} + 2^3\frac{(2!)^2}{5!} + 2^4 \frac{(3!)^2}{7!} + \cdots \right].
+\end{equation}
+Para esto, trunque la serie infinita para incluir s'olo un n'umero finito de t'erminos. Lo anterior es un ejemplo de un m'etodo con el que se puede calcular el valor de $\pi$, con precisi'on cada vez mayor al agregar m'as y m'as t'erminos. 
+
 \end{questions}
 \end{document}

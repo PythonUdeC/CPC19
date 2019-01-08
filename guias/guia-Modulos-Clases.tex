@@ -1,0 +1,37 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Taller Python 2019}
+\rhead{\bf\normalsize Gu\'ia M'odulos y Clases}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+\item Copie los c'odigos que escribi'o anteriormente y que definen su implementación de  las funciones \texttt{primos(n)} y \texttt{mifactorial(n)}, y adem'as c'odigo que calcula de su aproximaci'on de pi (almacenada ahora en la variable \texttt{mipi}) en un nuevo archivo llamado \texttt{misfunciones.py}. Este archivo puede usarse para definir un nuevo m'odulo. A continuaci'on, en una sesi'on interactiva de Python, importe su funci'on usando primero \texttt{import mimodulo} y llame a las funciones que est'an ah'i definidas. A continaci'on, importe el módulo de la segunda forma vista en clases, es decir, usando \texttt{from mimodulo import *} y vea c'omo funciona ahora la llamada a las funciones.
+
+\item El factorial es una funci'on com'unmente usada, y ya est'a implementada en diversos m'odulos populares de Python, por ejemplo, en el m'odulo \texttt{math}. Para verificar esto, importe el m'odulo \texttt{math} de las tres formas discutidas en clase y verifique que la funci'on \texttt{factorial} entrega los mismos valores ya calculados por usted. Lo mismo ocurre con el valor del n'umero $\pi$ (\texttt{math.pi}). 
+
+\item Aproveche que tiene cargado el m'odulo \texttt{math} e investigue qu'e funciones y variables est'an definidas en este m'odulo. Para esto, ejecute \texttt{dir(math)} o revise la \href{https://docs.python.org/2/library/math.html}{documentaci\'on en l\'inea} disponible.
+\end{questions}
+\end{document}
