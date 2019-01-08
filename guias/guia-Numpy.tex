@@ -116,8 +116,8 @@ La primera l'inea carga los datos al arreglo \texttt{d}. Las 'ultimas dos l'inea
 \item Los arreglos de \texttt{NumPy} tambi'en pueden contener componentes con valores booleanos (siempre que todos los componentes lo sean). Por ejemplo,
 
 \begin{minted}[bgcolor=bg]{python}
-x=arange(11)
-y=(x>5)
+x = np.arange(11)
+y = (x>5)
 print(x)
 print(y)
 \end{minted}
@@ -125,16 +125,16 @@ print(y)
 muestra que \texttt{y} es un arreglo cuyas componentes son verdaderas o falsas dependiendo si la condici'on impuesta (\texttt{x>5}) se satisface en cada componente del arreglo \texttt{x}.
 
 
-\item Las funciones \texttt{any()} y \texttt{all()}, al ser aplicadas a un \textit{arreglo de booleanos} indican si \textit{alguna} o \textit{todas} las componentes del arreglo son verdaderas, respectivamente. Usando el arreglo \texttt{x} definido en el punto anterior, entonces
+\item Las funciones \texttt{np.any()} y \texttt{np.all()}, al ser aplicadas a un \textit{arreglo de booleanos} indican si \textit{alguna} o \textit{todas} las componentes del arreglo son verdaderas, respectivamente. Usando el arreglo \texttt{x} definido en el punto anterior, entonces
 
 \begin{minted}[bgcolor=bg]{python}
-any(x>5)
+np.any(x>5)
 \end{minted}
 
 es verdadero porque s'i existe una componente del arreglo \texttt{x} que es mayor que 5, en cambio 
 \begin{minted}[bgcolor=bg]{python}
-any(x>10)
+np.any(x>10)
 \end{minted}
-es falso. Verifique en forma similar el comportamiento de \texttt{all()} (por ejemplo, viendo qu'e entregan los comandos \texttt{all(x>5)} y \texttt{all(x>=0)}).
+es falso. Verifique en forma similar el comportamiento de \texttt{np.all()} (por ejemplo, viendo qu'e entregan los comandos \texttt{np.all(x>5)} y \texttt{np.all(x>=0)}).
 \end{questions}
 \end{document} 
