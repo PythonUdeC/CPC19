@@ -1,0 +1,5 @@
+numpy 
+matplotlib
+version_information
+imageio
+IPython
