@@ -14,6 +14,10 @@ El curso entrega las bases para poder utilizar el lenguaje de programación Pyth
 
 La presentación introductoria está disponible [aquí](https://drive.google.com/open?id=12LZqsOCsxH7bX4PHM-m1WTQBcbVC8Ql_tRYQjHO7xZQ).
 
+Note que puede ejecutar remotamente los notebooks yendo a [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PythonUdeC/CPC19/master)
+
+
 Programa:
 
 ![Programa](https://python.udec.cl/wp-content/uploads/2018/12/programa-1.png)
+
