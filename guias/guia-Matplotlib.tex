@@ -33,22 +33,22 @@
 
 \item En esta pr'actica usted ejercitar'a algunas caracter'isticas muy b'asicas del  poderoso m'odulo \texttt{matplotlib}, y en particular usando las funciones definidas en \texttt{matplotlib.pyplot}. Para ello, cargue el m'odulo usando:
 \begin{minted}{python}
-from matplotlib.pyplot import *
+import  matplotlib.pyplot as plt
 \end{minted}
 \item Escriba un script Python en el archivo \texttt{g1.py} con el siguiente contenido:
 \begin{minted}{python}
 # -*- coding: UTF-8 -*-
-from matplotlib.pyplot import *
+import matplotlib.pyplot as plt
 
 x=[5,20,40,60,80]
 y=[2.6,5.5,7,12.5,11.9]
 
-plot(x,y, marker="o", markersize=5, color="green", label="Datos experimentales")
-title("Voltaje versus Frecuencia")
-xlabel("Frecuencia $f$ [Hertz]")
-ylabel("Voltaje $V$ [Volt]")
-legend(loc=2) # esquina superior izquierda
-savefig("g1.pdf")
+plt.plot(x,y, marker="o", markersize=5, color="green", label="Datos experimentales")
+plt.title("Voltaje versus Frecuencia")
+plt.xlabel("Frecuencia $f$ [Hertz]")
+plt.ylabel("Voltaje $V$ [Volt]")
+plt.legend(loc=2) # esquina superior izquierda
+plt.savefig("g1.pdf")
 \end{minted}
 Note que la primera l'inea es necesaria si se quieren incluir caracteres latinos (tildes, letra \~n, etc). Este programa grafica los datos en las listas \texttt{x} e \texttt{y} usando c'irculos verdes, que guarda en el archivo \texttt{g1.pdf}.
 \item Copie el archivo \texttt{g1.py} a \texttt{g2.py}, que en adelante usar'a para realizar pruebas. 
@@ -81,7 +81,7 @@ en el intervalo $x\in[-30,30]$, y que guarde el resultado en el archivo \texttt{
 
 \item Mejore su programa \texttt{g3.py} para que el gr'afico incorpore todos los elementos necesarios para obtener un resultado aceptable (T'itulo que indique la funci'on graficada, ejes con nombres adecuados, grilla (opcional), etc.).
 
-\item Finalmente, confeccione un programa \texttt{g4.py} que cargue y grafique (lo mejor que pueda) los datos en el archivo \texttt{datos.txt} usado en la gu'ia 04. Env'ie los archivos \texttt{g4.py} y \texttt{g4.pdf} al email del profesor G. Rubilar.
+\item Finalmente, confeccione un programa \texttt{g4.py} que cargue y grafique (lo mejor que pueda) los datos en el archivo \texttt{datos.txt} usado en la gu'ia 04.% Env'ie los archivos \texttt{g4.py} y \texttt{g4.pdf} al email del profesor G. Rubilar.
 \begin{table}
 \begin{center}
 \begin{tabular}{cc}
