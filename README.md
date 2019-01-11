@@ -17,7 +17,7 @@ La presentación introductoria está disponible [aquí](https://drive.google.com
 Note que puede ejecutar remotamente los notebooks yendo a [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/PythonUdeC/CPC19/master)
 
 
-Programa:
+Creamos un [grupo de Telegram](https://t.me/joinchat/G8R4hhGanwPBLDrfd7rTtg) donde podrán compartir sus dudas, comentarios y logros relacionados a la programación en Python. Nos Leemos! 
 
-![Programa](https://python.udec.cl/wp-content/uploads/2018/12/programa-1.png)
+![QR](qrcode.49944270.png)
 
