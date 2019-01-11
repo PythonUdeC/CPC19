@@ -1,0 +1,67 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,epsfig}
+\usepackage[colorlinks]{hyperref}
+
+\usepackage{minted} 
+\usemintedstyle{emacs}
+\usepackage{tcolorbox} % colores para el fondo
+\definecolor{bg}{rgb}{0.95,0.95,0.95} %color de fondo
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+
+\firstpageheadrule
+\runningheadrule
+\lhead{\bf\normalsize Taller Python 2019}
+\rhead{\bf\normalsize Gu\'ia Introducci\'on}
+\cfoot{ }
+\lfoot{\tiny GR}
+\begin{flushleft}
+\vspace{0.2in}
+
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{questions}
+
+\item Verifique usando \texttt{SymPy} las siguientes identidades
+\begin{parts}
+\item 
+\begin{equation}
+\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n = e = 2.71828182845905\cdots
+\end{equation}
+\item 
+\begin{equation}
+e^{i\vec{x}\cdot\vec{\sigma}} \equiv I\cos(r) + i(\hat{r}\cdot\sigma)\sin(r),
+\end{equation}
+donde $\vec\sigma = (\sigma_1,\sigma_2,\sigma_3)$ son las \href{https://es.wikipedia.org/wiki/Matrices_de_Pauli}{matrices de Pauli}, y $\vec{x}=r\hat{r}$ es un vector, con m'odulo $r = \sqrt{\vec{x}\cdot\vec{x}}$, y vector unitario correspondiente $\hat{r}$. Las matrices de Pauli están predefidas en el submódulo \texttt{physics.matrices} con el nombre \texttt{msigma(i)}, $i=1,2,3$. Ver la documentación correspondiente \href{https://docs.sympy.org/latest/modules/physics/matrices.html}{aqu\'i}.
+\item 
+\begin{equation}
+\sum_{n=0}^N n = 1 + 2 + \cdots + (N-1) + N = \frac{N(N+1)}{2}
+\end{equation}
+\textbf{Sugerencia}: Use la función \texttt{Sum} de Sympy. Ver el \href{https://github.com/PythonUdeC/CPC19/blob/master/06-Sympy.ipynb}{notebook de SymPy} de nuestro curso.
+\end{parts}
+
+\item Usando \texttt{Sympy} implemente una función que calcule los \href{https://es.wikipedia.org/wiki/Polinomios_de_Hermite}{polinomios de Hermite} $H_n(x)$, calcul'andolos con la siguiente relación de recurrencia:
+\begin{equation}
+%H_n(x) = (-1)^n e^{x^2} \frac{d^n\ }{dx^n} e^{-x^2}
+H_{n+1}(x) = 2x H_n(x) - H'_n(x),
+\end{equation}
+con $H_0(x)=1$
+Compare su resultado con las funciones que ya vienen incorporadas en SymPy: \texttt{hermite(n,x)}. 
+
+\item Resuelva la siguiente EDO usando SymPy:
+\begin{equation}
+y''(x)+y(x) = (1+a\cos(x))^2
+\end{equation}
+y determine las constantes de integración que satisfacen las condiciones
+\begin{equation}
+y(0)=y'(0)=0.
+\end{equation}
+\end{questions}
+\end{document}
