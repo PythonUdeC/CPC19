@@ -1,0 +1,116 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+
+\pagestyle{headandfoot}
+
+\spanishdecimal{.}
+%se redefine comando que cita figuras
+\newcommand{\figref}[1]{\ref{#1}}
+\usepackage{float}%para poder poner figuras justo en el lugar que deseo con \begin{figure}[H]
+\usepackage{minted} 
+\begin{document}
+
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2019}
+\rhead{\bf\normalsize Tarea \'area Ingenier\'ia}
+\cfoot{ }
+\lfoot{\tiny NNIV}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{Fecha M'axima de entrega: Lunes 21 de Enero.}
+\end{center}
+\textbf{Instrucciones:} Resuelva el problema propuesto usando Python. Env'ie todos los archivos necesarios para reproducir sus resultados (archivos de datos, c'odigos .py, notebooks .ipynb, etc.) por email a \texttt{nibarra@ubiobio.cl}.
+
+\bigskip
+Sea $h(t)$ una funci\'on con $t \in \ ]-\infty,+\infty[$, se define la transformada de Fourier (FT por las siglas en ingl\'es de \textit{Fourier Transform}) continua ${\cal F} [h(t)](f):=\tilde{h}(f)$, como aquella transformaci\'on que aplicada sobre la funci\'on original, la descompone en una superposici\'on continua de funciones peri\'odicas con frecuencias $f$. Convencionalmente consideraremos la Transformada de Fourier ${\cal F}$ y su inversa ${\cal F}^{-1}$ como:
+\begin{align}
+\tilde{h}(f):=\int_{-\infty}^{\infty}h(t)e^{-i2\pi ft}dt, \qquad
+h(t):=\int_{-\infty}^{\infty}\tilde{h}(f)e^{i2\pi ft}df.\label{eq:def-TF}
+\end{align}
+
+Cuando la se\~nal a estudiar corresponde a datos provenientes de un laboratorio o se han conseguido simulando alg\'un fen\'omeno f\'isico en el computador, no se tiene una expresi\'on anal\'itica a evaluar en la ec. \eqref{eq:def-TF}(a), sino que se tiene un conjunto de $N$ pares de n\'umeros $(t_{j}, h_{j})$, con $j=0,1,2,\dotsc,N-1$. Pese a ello, considerando la extensi\'on peri\'odica de la se\~nal muestreada durante un tiempo $T$ (tiempo total del muestreo), igual podemos definir la Transformada de Fourier Discreta (DFT por las siglas en ingl\'es de \textit{Discrete Fourier Transform}) como se indicar\'a a continuaci\'on.
+
+Si la se\~nal est\'a uniformemente distribuida en el tiempo, tal que $t_j=j\Delta t$ con $j=0,1,\dotsc$ y $\Delta t$ el espaciamiento temporal, entonces se define la Transformada de Fourier discreta de la se\~nal y su inversa como 
+\begin{align}\label{eq:def-UDFT}
+\tilde{h}_k:=\frac{1}{N}\sum_{j=0}^{N-1}h_{j}e^{- i 2\pi k j/N},\qquad
+h_j:= \sum_{k=0}^{N-1}\tilde{h}_{k}e^{i 2\pi k j/N}.
+\end{align}
+
+Note que la ec. \eqref{eq:def-UDFT}(a) se aproxima a la integral de Riemann de \eqref{eq:def-TF}(a), con $T=N\Delta t$ y $f_k:= k/T$.
+
+\begin{enumerate}
+\item Abra un Jupyter Notebook y copie el siguiente c\'odigo:
+
+\begin{minted}{python}
+import numpy as np #Se carga NumPy
+import matplotlib.pyplot as plt #Se carga matplotlib.pyplot
+import IPython.display as ipd #Se carga Ipython.display
+from scipy.fftpack import fft, fftfreq #Carga Discrete Fourier Transform
+from scipy.io import wavfile #Se carga modulo para leer y escribir archivos en formato wav
+
+def fft_local(t,y):
+    fourier = fft(y)
+    freq = fftfreq(len(t), np.diff(t)[0])
+    mask = np.where(freq>=0)[0]
+    return [freq[mask], fourier[mask]]
+    
+tmax = 5. # Tiempo max. en segundos
+fs = 22050 # Tasa de sampleo
+t = np.linspace(-tmax,tmax,int(tmax*fs)) #arreglo de tiempo
+dt = np.diff(t)[0]
+\end{minted}
+
+\item \label{p1} Con NumPy genere una se\~nal peri\'odica en la forma
+\begin{align}
+y_{1}(t) = A_{1}\cos(2\pi f_{1}t),
+\end{align}
+%
+eligiendo arbitrariamente el valor de $A_{1}$ y $f_{1}$ (ambos positivos, se sugiere $A_{1}=1$ y $f_{1}=400$~Hz). Con la funci\'on \texttt{plt.plot} grafique $y_{1}(t)$ versus $t$ y con la funci\'on \texttt{ipd.Audio} resproduzca el sonido de la se\~nal generada pasando el p\'arametro \texttt{rate=fs} (tasa de sampleo).
+
+\item \label{p2} Eval\'ue la DFT mediante la funci\'on \texttt{fff\_local} y grafique la magnitud de la transformada fourier versus la frecuencia.
+
+\item Repita los puntos \ref{p1} y \ref{p2} para una se\~nal
+\begin{align}
+y_{2}(t) = A_{2}\cos(2\pi f_{2}t).
+\end{align}
+
+Se sugiere elegir $A_{2}=A_{1}$ y $f_{2}=2\,000$~Hz.
+
+\item Repita los puntos \ref{p1} y \ref{p2} para la se\~nal
+\begin{align}
+y_{3}(t) = y_{1}(t)+y_{2}(t).
+\end{align}
+
+\item Desde \href{https://github.com/PythonUdeC/CPC19/blob/master/datas/CongaGroove-mono.wav}{aqu\'i} descargue el archivo de audio \texttt{CongaGroove-mono.wav} y c\'arguelo con la funci\'on \texttt{wavfile.read} copiando el siguiente c\'odigo:
+\begin{minted}{python}
+ffss, y4 = wavfile.read('./CongaGroove-mono.wav')
+\end{minted}
+
+Genere el arreglo de temporal asociado copiando el siguiente c\'odigo:
+\begin{minted}{python}
+dt4 = 1/fs4
+N4 = len(y4) #numero de puntos
+fN = 1./(2.*dt4) #frecuencia de Niquist
+t4 = np.linspace(0, dt4*N4, N4) #arreglo temporal
+\end{minted}
+
+Con la funci\'on \texttt{plt.plot} grafique $y_{4}(t_{4})$ versus $t_{4}$ y con la funci\'on \texttt{ipd.Audio} resproduzca el sonido de la se\~nal cargada pasando el p\'arametro \texttt{rate=fs4} (tasa de sampleo). Repita el punto \ref{p2} para la se\~nal $y_{4}(t_{4})$.
+ 
+\item Observe sus gr\'aficos, analízelos y en su correo responda: \textquestiondown Qu\'e informaci\'on de una se\~nal le entrega su respectiva DFT?
+\end{enumerate}
+\end{document} 
