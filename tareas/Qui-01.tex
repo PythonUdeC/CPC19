@@ -1,0 +1,113 @@
+\documentclass[11pt]{exam}
+\usepackage[activeacute,spanish]{babel} % Permite el idioma espa\~nol.
+\usepackage[latin1]{inputenc}
+% !TEX encoding = UTF-8 Unicode
+\usepackage{amsmath,amsfonts}
+\usepackage[colorlinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+%added because of problem between framed and exam package
+\newcommand*{\renameenviron}[1]{%
+  \expandafter\let\csname exam-#1\expandafter\endcsname
+      \csname #1\endcsname
+  \expandafter\let\csname endexam-#1\expandafter\endcsname
+      \csname end#1\endcsname
+  \expandafter\let\csname #1\endcsname\relax
+  \expandafter\let\csname end#1\endcsname\relax
+}
+\renameenviron{framed}
+\renameenviron{shaded}
+\renameenviron{leftbar}
+\usepackage{framed}
+\usepackage{hyperref}
+
+
+\pagestyle{headandfoot}
+\spanishdecimal{.}
+
+\begin{document}
+\firstpageheadrule
+%\firstpagefootrule
+%\firstpagefooter{}{Pagina \thepage\ de \pages}{}
+\runningheadrule
+%\runningfootrule
+\lhead{\bf\normalsize Taller Python 2019}
+\rhead{\bf\normalsize Tarea \'Area Qu\'imica/Bioqu\'imica}
+\cfoot{ }
+\lfoot{\tiny EVM}
+\begin{flushleft}
+\vspace{0.2in}
+%\hbox to \textwidth{Nombre: \enspace \hrulefill}
+%Nombre : \\
+\vspace{0.25cm}
+\end{flushleft}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+\textbf{Fecha de entrega: Lunes 21 de Enero}
+\end{center}
+\textbf{Instrucciones:} Resuelva el problema propuesto usando Python. Env'ie todos los archivos necesarios para reproducir sus resultados (archivos de datos, c'odigos .py, notebooks .ipynb, etc.) por email a \texttt{evohringer@udec.cl}.
+
+\bigskip
+
+En esta tarea usted deber\'a procesar la estructura cristalina de la prote\'ina hemoglobina obtenida a una resoluci\'on de 2.1 \AA\ mediante el m\'etodo de difracci\'on de rayos X. El archivo que contiene la estructura de la hemoglobina lo puede encontrar en \url{http://www.rcsb.org/pdb/ngl/ngl.do?pdbid=1GZX&bionumber=1} en donde debe descargar el archivo denominado PDB.
+
+El formato del archivo es pdb "Protein Data Bank" que es el formato com\'un para estructuras de prote\'inas (Mayor informaci\'on puede obtener bajo \url{http://www.wwpdb.org/documentation/file-format-content/format33/v3.3.html}). 
+
+El archivo contiene informaci\'on sobre la t\'ecnica de cristalizaci\'on, los detalles de la metodolog\'ia de Rayos X empleada etc. los cuales son especificadas como \textit{REMARK}, \textit{SEQRES} etc: 
+\begin{verbatim}
+REMARK   2                                                                      
+REMARK   2 RESOLUTION.    2.1  ANGSTROMS.                                       
+REMARK   3                                                                      
+REMARK   3 REFINEMENT.                                                          
+REMARK   3   PROGRAM     : PROLSQ                                               
+REMARK   3   AUTHORS     : KONNERT,HENDRICKSON                                  
+REMARK   3                                                                      
+REMARK   3  DATA USED IN REFINEMENT.                                            
+REMARK   3   RESOLUTION RANGE HIGH (ANGSTROMS) : 2.1                            
+REMARK   3   RESOLUTION RANGE LOW  (ANGSTROMS) : 10                             
+REMARK   3   DATA CUTOFF            (SIGMA(F)) : 0.0                            
+REMARK   3   COMPLETENESS FOR RANGE        (%) : 95                             
+REMARK   3   NUMBER OF REFLECTIONS             : 24327                          
+REMARK   3                                                                      
+REMARK   3  FIT TO DATA USED IN REFINEMENT.                                     
+REMARK   3   CROSS-VALIDATION METHOD          : FREE R                          
+REMARK   3   FREE R VALUE TEST SET SELECTION  : RANDOM                      
+\end{verbatim}
+
+
+Despu\'es de esta secci\'on se agregan lineas que contienen la informaci\'on de cada \'atomo en la estructura de la prote\'ina que comienzan con \textit{ATOM} o \textit{HETATOM} (cuando pertenecen a la cadena pept\'idica): 
+\begin{verbatim}
+ATOM      1  N   VAL A   1      18.432  -2.931   3.579  1.00 37.68           N  
+ATOM      2  CA  VAL A   1      19.662  -2.549   2.806  1.00 35.41           C  
+ATOM      3  C   VAL A   1      19.282  -1.939   1.441  1.00 34.04           C  
+ATOM      4  O   VAL A   1      18.421  -2.497   0.695  1.00 33.95           O  
+ATOM      5  CB  VAL A   1      20.659  -3.754   2.825  1.00 35.59           C  
+ATOM      6  CG1 VAL A   1      20.109  -4.992   2.222  1.00 37.84           C  
+ATOM      7  CG2 VAL A   1      21.982  -3.272   2.245  1.00 36.73           C  
+ATOM      8  N   LEU A   2      19.905  -0.786   1.169  1.00 29.21           N  
+ATOM      9  CA  LEU A   2      19.749  -0.064  -0.067  1.00 27.27           C  
+ATOM     10  C   LEU A   2      20.513  -0.749  -1.213  1.00 27.19           C  
+ATOM     11  O   LEU A   2      21.748  -0.901  -1.212  1.00 27.58           O  
+ATOM     12  CB  LEU A   2      20.204   1.339   0.210  1.00 25.79           C  
+ATOM     13  CG  LEU A   2      19.275   2.508   0.284  1.00 30.66           C 
+\end{verbatim}
+Estas l\'ieas contienen el \'indice del \'atomo, el tipo de \'atomo, el amino \'acido al cual pertenece y su n\'umero dentro de la secuencia, las coordenadas x, y, z de este \'atomo en Angstrom y al final el elemento.
+
+\vskip 0.5cm
+
+Escriba un programa que procese este archivo y entregue la siguiente informaci\'on:
+
+\vskip 0.3cm
+
+
+\begin{parts}
+\part Una lista con los nombres de amino \'acidos que componen la cadena pept\'idica (secuencia) y un histograma con la frecuencia de ocurrencia de un amino \'acido en esa lista.
+
+
+\part Las distancias entre cada uno de los cuatro \'atomos de hierro en \AA\ y ordene estas en una matriz de distancia (4x4) usando numpy.
+
+\part La distancia entre los \'atomos de tipo \textbf{CA} del mismo amino \'acido presente en las cadenas A, B, C y D e identifique la distancia m\'axima, la m\'inima y el promedio.
+\end{parts}
+\end{document} 
