@@ -56,15 +56,15 @@ el nuevo pixel tendr\'a los valores:
 \text{nuevo pixel} = (x,\, x,\, x).
 \end{align}
 
-Una mejor elecci\'on para la escala de grises es la \href{https://es.wikipedia.org/wiki/UIT-R_BT.601-7}{\textbf{ITU-R Recommendation BT.601-7}}, la cual especifica m\'etodos para codificar digitalmente seales de video mediante normalizaci\'on de valores. Para la transmisi\'on de escala de grises define la f\'ormula de la ec. \eqref{eq:x_ITU}.
+Una mejor elecci\'on para la escala de grises es la \href{https://es.wikipedia.org/wiki/UIT-R_BT.601-7}{\textbf{ITU-R Recommendation BT.601-7}}, la cual especifica m\'etodos para codificar digitalmente se\~nales de video mediante normalizaci\'on de valores. Para la transmisi\'on de escala de grises define la f\'ormula de la ec. \eqref{eq:x_ITU}.
 \begin{align}
 x = \color{green}{\text{int}} \color{black}(0.299 \times \rojo \plus 0.587 \times \verde \plus 0.114 \times \azul \color{black}). \label{eq:x_ITU}
 \end{align}
 
 \begin{itemize}
 \item Desde \href{https://github.com/PythonUdeC/CPC19/blob/master/images/IMG_20190109_144618.jpg}{aqu\'i} descargue la fotograf\'ia del curso y c\'arguela con la funci\'on \texttt{imageio.imread}.
-\item Escriba una funci\'on tenga como \texttt{input} la imagen y como \texttt{output} la imagen convertida a la escala de grises usando la ec. \eqref{eq:x_promedio}.
-\item Escriba una funci\'on tenga como \texttt{input} la imagen y como \texttt{output} la imagen convertida a la escala de grises usando la ec. \eqref{eq:x_ITU}.
+\item Escriba una funci\'on que tenga como \texttt{input} la imagen y como \texttt{output} la imagen convertida a la escala de grises usando la ec. \eqref{eq:x_promedio}.
+\item Escriba una funci\'on que tenga como \texttt{input} la imagen y como \texttt{output} la imagen convertida a la escala de grises usando la ec. \eqref{eq:x_ITU}.
 \item Con la funci\'on \texttt{matplotlib.pyplot.imshow} visualice las im\'agenes en ambas escalas de grises. Note que deben lucir como se muestra en la figura \figref{fig:escalas_grises}. En su correo responda \textquestiondown cu\'al algoritmo le gust\'o m\'as?
 \item Con la funci\'on \texttt{imageio.imsave} guarde las nuevas im\'agenes.
 \item Finalmente, t\'omese una selfie y repita el proceso. Puede subir las im\'agenes convertidas a sus redes sociales jact\'andose de haber codificado los filtros con sus propias manitos en \texttt{Python}.
